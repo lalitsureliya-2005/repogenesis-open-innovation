@@ -1,0 +1,8 @@
+===== PROJECT STRUCTURE =====
+(no files produced)
+
+===== RUNNING INSTRUCTIONS =====
+node index.js
+
+===== ERROR REPRODUCTION NOTES =====
+No files were produced.

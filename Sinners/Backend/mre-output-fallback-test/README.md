@@ -1,0 +1,1 @@
+Fallback engaged: original model output had no FILE sections.
