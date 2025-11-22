@@ -1,33 +1,115 @@
-# Minimal Bug Recreator (Working Example)
+# Minimal Bug Recreator
 
-End-to-end example that:
-- Accepts error + snippet + optional stack + optional ZIP
-- Converts ZIP contents to text
-- Builds a strict prompt for your local Ollama (llama3.1:8b)
-- Parses the MRE output
-- Writes files and returns a ready-to-run ZIP to the frontend
+This project is designed to **easily recreate, debug, and isolate bugs** in both **Frontend** and **Backend** environments.  
+It provides a clean, minimal setup where developers can copy small broken code snippets into isolated environments to observe issues clearly without large project complexity.
 
-## Quick start
+---
 
-### 1) Backend
+## 🚀 Your Idea
+
+Modern projects become too large and messy, making debugging slow and frustrating.  
+Your idea:  
+**Create a minimal environment where any bug can be reproduced quickly** with:
+
+- Very small codebase  
+- Separate React frontend + Node backend  
+- Fast testing and debugging  
+- No unnecessary dependencies  
+- Clear separation between UI, API, and logic
+
+This helps teams fix bugs **faster**, because the exact bug scenario can be re-created within minutes.
+
+---
+
+## ✨ Features
+
+### 🔹 1. Minimal React Frontend
+- Clean UI to test API calls  
+- Components isolated for testing  
+- Easy to insert code snippets  
+- Reproducible UI bugs  
+
+### 🔹 2. Node + Express Backend
+- Minimal REST API  
+- Easy to recreate server issues  
+- Fast debugging without full-stack load  
+
+### 🔹 3. Recreate Bugs Quickly
+- Drop any component / file  
+- Run and see bug instantly  
+- Compare behavior with main project  
+
+### 🔹 4. Branch-based Workflows
+- `frontend` → frontend-specific testing  
+- `backend` → backend-only bug debugging  
+- `final` → combined working environment  
+
+### 🔹 5. Lightweight Project
+- No heavy dependencies  
+- Loads instantly  
+- Perfect for teaching debugging concepts  
+
+---
+
+## 🧰 Tech Stack
+
+### **Frontend**
+- React  
+- Vite  
+- JavaScript  
+- CSS (custom styles)  
+
+### **Backend**
+- Node.js  
+- Express.js  
+
+### **Development Tools**
+- Git & GitHub  
+- PowerShell / Bash  
+- VS Code  
+
+---
+
+## 📦 Folder Structure
+
+Minimal-Bug-Recreator/
+│
+├── Backend/
+│ ├── server.js
+│ ├── routes/
+│ └── utils/
+│
+├── Frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── styles/
+│ │ └── main.jsx
+│ └── index.html
+│
+└── README.md
+
+
+---
+
+# 🛠 Setup Instructions
+
+## ✔ 1. Clone the Repository
+
 ```bash
+git clone https://github.com/<your-username>/Minimal-Bug-Recreator.git
+
+cd Minimal-Bug-Recreator
+
+cd Frontend
+npm install
+npm run dev
+http://localhost:5173/
+
 cd Backend
-cp .env.example .env
-# edit .env if your Ollama host/port differ
 npm install
-npm run dev
-```
+npm start
 
-### 2) Frontend (Vite + React)
-```bash
-cd ../Frontend
-npm install
-npm run dev
-```
+http://localhost:<PORT>/
 
-Open the frontend URL printed by Vite (default http://localhost:5173), and make sure the backend runs on http://localhost:5000.
-
-## Notes
-- Backend expects Ollama at `http://127.0.0.1:11434/api/generate` by default.
-- The parser expects the LLM to follow the *exact* "FINAL OUTPUT FORMAT".
-- Adjust file filtering in `src/utils/workflow.js` as needed.
+const API_BASE_URL = "http://localhost:5000";
